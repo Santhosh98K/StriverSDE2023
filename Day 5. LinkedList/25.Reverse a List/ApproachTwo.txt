@@ -1,0 +1,75 @@
+package Striverchallenge;
+
+/*
+Given the head of a singly linked list, write a program to reverse the linked list, and return the head pointer to the reversed list.
+
+Examples:
+
+Input Format: 
+head = [3,6,8,10]
+This means the given linked list is 3->6->8->10 with head pointer at node 3.
+
+Result:
+Output = [10,6,8,3]
+This means, after reversal, the list should be 10->6->8->3 with the head pointer at node 10.
+
+*/
+
+import java.util.*;
+public class ApproachTwo {
+
+	public static void main(String[] args) {
+
+		
+		
+		
+		LinkedListNode n = new LinkedListNode(1);
+		n.next = new LinkedListNode(2);
+		n.next.next = new LinkedListNode (3);
+		n.next.next.next = new LinkedListNode(4);
+		n.next.next.next.next = new LinkedListNode(5);
+		
+		Solution s = new Solution();
+		s.reverseLinkedList(n);
+	}
+	
+	//TC :  O(n)
+
+}
+
+
+
+class LinkedListNode<T> 
+{
+	T data;
+	LinkedListNode<T> next;
+	public LinkedListNode(T data) 
+    {
+    	this.data = data;
+	}
+}
+
+
+class Solution 
+{
+public static LinkedListNode<Integer> reverseLinkedList(LinkedListNode<Integer> head) 
+{
+
+//This logic is just like swapping
+
+
+      LinkedListNode dummy = null;
+	//dummy  to point before first node 
+	LinkedListNode previous = head;
+	//previous is to point the head node to previous node.
+	
+	while(head != null){
+		 
+         	head=head.next;
+		previous.next = dummy;
+		dummy = previous;
+		previous = head;
+	}
+	return dummy;
+}
+}

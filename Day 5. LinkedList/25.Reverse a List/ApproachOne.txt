@@ -1,0 +1,40 @@
+/*
+Given the head of a singly linked list, write a program to reverse the linked list, and return the head pointer to the reversed list.
+
+Examples:
+
+Input Format: 
+head = [3,6,8,10]
+This means the given linked list is 3->6->8->10 with head pointer at node 3.
+
+Result:
+Output = [10,6,8,3]
+This means, after reversal, the list should be 10->6->8->3 with the head pointer at node 10.
+
+*/
+
+import java.util.*;
+public class approachOne {
+
+	public static void main(String[] args) {
+		List<Integer> ls = Arrays.asList(1,2,3,4,5,6);
+		List<Integer> result = new LinkedList<>();
+		int size = ls.size();
+
+		//Traversing from back
+		for(int i=size-1;i>=0;i--) {
+			result.add(ls.get(i)); //BigO(n)
+		}
+		System.out.print(result);
+
+		//Collections Interface
+		Collections.reverse(ls);//BigO(n)
+		System.out.print( ls);
+		
+		
+		
+	}
+	
+	//TC :  BigO(n)
+
+}
