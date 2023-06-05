@@ -1,5 +1,5 @@
-package Striverchallenge;
-import java.util.*;
+
+
 /*Find middle element in a Linked List
 Problem Statement: Given the head of a singly linked list, return the middle node of the linked list. If there are two middle nodes, return the second middle node.
 
@@ -12,23 +12,25 @@ head = [1,2,3,4,5]
 Result: [3,4,5]
 */
 
-public class Approach2 {
+import java.util.*;
+
+public class ApproachTwo {
 
 	public static void main(String[] args) {
 
-		
-		
 		Node n = new Node(1);
 		n.next = new Node(2);
 		n.next.next = new Node (3);
 		n.next.next.next = new Node(4);
 		n.next.next.next.next = new Node(5);
 		
+		// 1 -> 2 -> 3-> 4->5 node created
+		
 		Solution s = new Solution();
 		s.findMiddle(n);
 	}
 	
-	//TC : O(n) + O(n/2)  =  O(n)
+	//TC : traversal O(n) + middle traversal O(n/2)  =  O(n)
 
 }
 
@@ -60,19 +62,23 @@ class Solution
 {
    public static Node findMiddle(Node head)
    {
-             Node cur = head;
-             int count=0;
-             while(cur != null){
+	   
+	     // current pointing to first (root) node
+             Node current = head;
+             int count=0; // to get length of list
+             while(current != null){
                    count++;
-                   cur = cur.next;
+                   current = current.next;
              }
              
              
-             Node temp = head;
+             current = head;
              for(int i = 0; i < count / 2; i++) {
-            	 temp = temp.next;
-   	      	 }
-             return temp;
+            	   current = current.next;
+   	     }
+	   
+	     //current pointing to node 2, so it will return from node 2(3->4->5)
+             return current;
 
    }
 }
