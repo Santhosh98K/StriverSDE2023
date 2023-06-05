@@ -1,4 +1,4 @@
-import java.util.*;
+
 /*Find middle element in a Linked List
 Problem Statement: Given the head of a singly linked list, return the middle node of the linked list. If there are two middle nodes, return the second middle node.
 
@@ -16,7 +16,8 @@ Approach 1 . Using Collection - No DSA Knowledge Required.☺ If Raj sees this H
 
 */
 
-public class approachone{
+import java.util.*;
+public class approachOne{
 
 	public static void main(String[] args) {
 		List<Integer> ls = Arrays.asList(1,2,3,4,5,6);
